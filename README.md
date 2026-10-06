@@ -1,2 +1,2 @@
 # T1fy.me-Host
-code for my website
+The Backend Code Behind My Custom Website! (And Hosting.)
