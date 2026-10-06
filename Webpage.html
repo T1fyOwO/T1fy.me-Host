@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T1fy</title>
+
+<style>
+:root {
+    --bg: #00000d;
+    --purple: #a855f7;
+    --light: #c084fc;
+    --text: #b7afd2;
+    --border: #24143f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 36px 40px 28px;
+    background: rgba(3, 3, 20, 0.96);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    color: var(--light);
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 42px;
+    text-shadow:
+        0 0 8px var(--purple),
+        0 0 18px rgba(168, 85, 247, 0.5);
+}
+
+nav {
+    display: flex;
+    gap: 34px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 25px;
+}
+
+nav a:hover {
+    color: var(--light);
+}
+
+main {
+    max-width: 1080px;
+    margin: auto;
+    padding: 100px 40px;
+}
+
+.pfp {
+    width: 255px;
+    height: 255px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 40px;
+
+    border: 4px solid #a855f7;
+
+    box-shadow:
+        0 0 12px #a855f7,
+        0 0 30px rgba(168, 85, 247, 0.7),
+        0 0 55px rgba(168, 85, 247, 0.35);
+}
+
+h1 {
+    position: relative;
+    margin: 0;
+    color: var(--light);
+    font-size: clamp(62px, 10vw, 110px);
+    line-height: .98;
+    letter-spacing: -4px;
+    z-index: 1;
+}
+
+h1::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    color: transparent;
+    -webkit-text-stroke: 5px #7e22ce;
+    text-shadow:
+        0 0 7px var(--purple),
+        0 0 18px var(--purple),
+        0 0 32px rgba(168, 85, 247, .5);
+    z-index: -1;
+}
+
+.pronouns {
+    color: var(--light);
+    font-size: 20px;
+    margin-top: 12px;
+    text-shadow: 0 0 8px rgba(168, 85, 247, .5);
+}
+
+.subtitle {
+    max-width: 780px;
+    font-size: 28px;
+    margin: 25px 0 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 13px 28px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #03030f;
+    color: #f0eaff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.btn:hover {
+    border-color: var(--purple);
+    box-shadow: 0 0 15px rgba(168, 85, 247, .2);
+}
+
+section {
+    border-top: 1px solid var(--border);
+    padding: 80px 0;
+}
+
+h2 {
+    color: var(--light);
+    font-size: 42px;
+}
+
+.languages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+    max-width: 600px;
+}
+
+.language {
+    padding: 18px 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #03030f;
+    color: var(--light);
+    font-size: 22px;
+    box-shadow: 0 0 12px rgba(168, 85, 247, .08);
+}
+
+.language:hover {
+    border-color: var(--purple);
+    box-shadow: 0 0 18px rgba(168, 85, 247, .2);
+}
+
+.card {
+    padding: 25px;
+    margin-top: 25px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: #02020f;
+}
+
+.ffffg {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 30px 40px 24px;
+    }
+
+    .brand {
+        font-size: 36px;
+    }
+
+    nav {
+        gap: 27px;
+    }
+
+    nav a {
+        font-size: 23px;
+    }
+
+    main {
+        padding: 80px 40px;
+    }
+
+    .pfp {
+        width: 255px;
+        height: 255px;
+    }
+
+    h1 {
+        font-size: 68px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .ffffg {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .languages {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="brand">T1fy</div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#ffffg">FFFFG</a>
+        <a href="#languages">Languages</a>
+        <a href="#links">Links</a>
+    </nav>
+
+</header>
+
+<main>
+
+<section id="about">
+
+    <img
+        class="pfp"
+        src="pfp.png"
+        alt="T1fy"
+    >
+
+    <h1 data-text="T1fy">T1fy</h1>
+
+    <div class="pronouns">he/him</div>
+
+    <div class="subtitle">
+        Part Time Programmer, geometry dash enthusiast,
+        and the person behind many Mod Ports.
+    </div>
+
+    <div class="buttons">
+        <a class="btn" href="#ffffg">FFFFG</a>
+        <a class="btn" href="#languages">Languages</a>
+        <a class="btn" href="#links">Links</a>
+    </div>
+
+</section>
+
+
+<section id="ffffg">
+
+    <h2>FFFFG</h2>
+
+    <p>
+        FFFFG is one of T1fy's communities and projects.
+    </p>
+
+    <div class="card ffffg">
+
+        <img
+            class="logo"
+            src="ffffg.jpg"
+            alt="FFFFG"
+        >
+
+        <div>
+
+            <h3>FFFFG</h3>
+
+            <p>
+                A community with its own Discord server and wiki.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="btn"
+                    href="https://discord.gg/BfcSpZNmZY"
+                    target="_blank"
+                >
+                    Discord
+                </a>
+
+                <a
+                    class="btn"
+                    href="https://ffffg.fandom.com/"
+                    target="_blank"
+                >
+                    Wiki
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="languages">
+
+    <h2>Languages</h2>
+
+    <div class="languages">
+
+        <div class="language">HTML</div>
+        <div class="language">Python</div>
+        <div class="language">PHP</div>
+        <div class="language">C++</div>
+
+    </div>
+
+</section>
+
+
+<section id="links">
+
+    <h2>Links</h2>
+
+    <div class="buttons">
+
+        <a
+            class="btn"
+            href="https://discord.gg/BfcSpZNmZY"
+            target="_blank"
+        >
+            FFFFG Discord
+        </a>
+
+        <a
+            class="btn"
+            href="https://ffffg.fandom.com/"
+            target="_blank"
+        >
+            FFFFG Wiki
+        </a>
+
+        <a
+            class="btn"
+            href="https://github.com/T1fyOwO"
+            target="_blank"
+        >
+            GitHub
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+</body>
+</html>
